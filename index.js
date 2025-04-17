@@ -34,6 +34,7 @@ async function run() {
         // console.log('pagination query', req.query);
         const page = parseInt(req.query.page)
         const size = parseInt(req.query.size)
+        
         // console.log('pagination query', page,size);
 
 
@@ -43,7 +44,7 @@ async function run() {
         .toArray();
         res.send(result);
     })
-    
+
 
     app.post('/productByIds', async(req, res) =>{
       const ids = req.body;
