@@ -43,6 +43,7 @@ async function run() {
         .toArray();
         res.send(result);
     })
+    
 
     app.post('/productByIds', async(req, res) =>{
       const ids = req.body;
@@ -55,7 +56,7 @@ async function run() {
       const result = await productCollection.find(query).toArray()
       res.send(result)
     })
-    
+
 
     app.get('/productsCount', async(req, res) =>{
       const count = await productCollection.estimatedDocumentCount()
